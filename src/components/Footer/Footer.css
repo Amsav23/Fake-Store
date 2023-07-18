@@ -1,0 +1,16 @@
+.footer-container {
+     background-color: var(--primary-bg);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+.contact-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+}

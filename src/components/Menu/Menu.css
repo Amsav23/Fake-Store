@@ -1,0 +1,12 @@
+.menu-container {
+    border: solid 2px purple;
+
+    padding: 20px;
+    margin-left: 8%;
+    width: 600px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blue);
+}
