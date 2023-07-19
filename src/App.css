@@ -7,6 +7,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: var(--off-white);
+}
+
 a{
   text-decoration: none;
   color: inherit;
@@ -15,5 +19,7 @@ a{
 :root{
   --primary-bg:rgb(102, 92, 171);
   --white:white;
-  --blue: rgb(15, 82, 186)
+  --blue: rgb(15, 82, 186);
+  --off-white: rgb(250, 249, 246);
+  --light-grey: lightgrey;
 }
