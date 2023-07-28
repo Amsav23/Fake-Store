@@ -23,6 +23,12 @@
     border-radius: 12px;
 }
 
+.product-card a{
+    display: flex;
+    justify-self: baseline;
+    margin: 5px;
+}
+
 .product-card p{
     display: flex;
     justify-self: baseline;

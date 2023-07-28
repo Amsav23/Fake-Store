@@ -5,7 +5,7 @@ function ProductCard({product}) {
   return (
     <div className="product-card">
         <img src={product.image}></img>
-        <p style={{fontWeight: "bold"}}>{product.title}</p>
+        <a href={`/details/${product.id}`} style={{fontWeight: "bold"}}>{product.title}</a>
         <p style={{color: "grey"}}>{product.category}</p>
         <p style={{fontWeight: "bold"}}>{product.price}€</p>
     </div>
