@@ -6,7 +6,7 @@ import Menu from './components/Menu/Menu'
 import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
 import Electronics from './pages/Electronics/Electronics'
-import Jewelry from './pages/Jewelry/Jewelry'
+import Jewelery from './pages/Jewelery/Jewelery'
 import MensClothing from './pages/MensClothing/MensClothing'
 import WomensClothing from './pages/WomensClothing/WomensClothing'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path='/all' element={<Homepage />} />
         <Route path='/electronics' element={<Electronics />} />
-        <Route path='/jewelry' element={<Jewelry />} />
+        <Route path='/jewelery' element={<Jewelery />} />
         <Route path='/mensclothing' element={<MensClothing />} />
         <Route path='/womensclothing' element={<WomensClothing />} />
         <Route path='/details/:productId' element={<ProductDetails />} />
