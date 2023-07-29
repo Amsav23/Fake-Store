@@ -11,7 +11,7 @@ function Jewelery() {
     //https://fakestoreapi.com/products/category/jewelery
 
     useEffect (
-      ()=> {
+      () => {
         console.log('page loaded')
         //make API call to get Jewelery product data
         axios.get('https://fakestoreapi.com/products/category/jewelery')
