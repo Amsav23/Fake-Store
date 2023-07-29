@@ -1,5 +1,5 @@
 .footer-container {
-     background-color: var(--primary-bg);
+    background-color: var(--primary-bg);
     padding: 30px;
     display: flex;
     align-items: center;
@@ -13,4 +13,60 @@
     background-color: transparent;
     border: none;
     color: var(--white);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.7s ease-in-out;
+}
+
+.modal-close-btn:hover {
+    color: red;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    display: flex;
+    width: 400px;
+}
+  
+form input, form textarea {
+    background-color: var(--gray);
+    color: var(--white);
+    width: 120%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+  
+form button[type='submit'] {
+    background-color: var(--primary-bg);
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    margin-top: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+  }
+  
+form button[type='submit']:hover {
+    background-color: red;
 }

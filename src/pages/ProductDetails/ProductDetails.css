@@ -10,8 +10,8 @@
 .details-container img {
     display: flex;
     align-self: center;
-    height: 300px;
-    margin-right: 120px;
+    height: 260px;
+    margin: 0 120px;
 }
 
 .container-info {
