@@ -7,7 +7,7 @@ function Electronics() {
     //create state for Electronics products
     const [products, setProducts] = useState([])
 
-    //this page loads Electronics products when it loads
+    //this page shows Electronics products when it loads
     //https://fakestoreapi.com/products/category/electronics
 
     useEffect (
