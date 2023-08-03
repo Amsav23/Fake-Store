@@ -10,31 +10,31 @@ import Jewelery from './pages/Jewelery/Jewelery'
 import MensClothing from './pages/MensClothing/MensClothing'
 import WomensClothing from './pages/WomensClothing/WomensClothing'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
+import Favorites from './pages/Favorites/Favorites'
+import FavoritesContextProvider from './contexts/FavoritesContext'
 
 function App() {
 
 
   return (
     <BrowserRouter>
-      <Header />
+      <FavoritesContextProvider>
+        <Header />
 
+        <Menu />
 
-      <Menu />
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/electronics' element={<Electronics />} />
+          <Route path='/jewelery' element={<Jewelery />} />
+          <Route path='/mensclothing' element={<MensClothing />} />
+          <Route path='/womensclothing' element={<WomensClothing />} />
+          <Route path='/details/:productId' element={<ProductDetails />} />
+          <Route path='/favorites' element={<Favorites />} />
+        </Routes>
 
-
-      <Routes>
-        <Route path='/all' element={<Homepage />} />
-        <Route path='/electronics' element={<Electronics />} />
-        <Route path='/jewelery' element={<Jewelery />} />
-        <Route path='/mensclothing' element={<MensClothing />} />
-        <Route path='/womensclothing' element={<WomensClothing />} />
-        <Route path='/details/:productId' element={<ProductDetails />} />
-      </Routes>
-
-      
-
-
-      <Footer />
+          <Footer />
+      </FavoritesContextProvider>
     </BrowserRouter>
   )
 }
