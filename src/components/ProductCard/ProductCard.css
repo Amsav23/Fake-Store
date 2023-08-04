@@ -36,11 +36,10 @@
 }
 
 .heart-icon{
-    color:var(--primary-bg);
-    font-size:20px;
-    cursor:pointer;
-    margin-left: 20px;
+    color:var(--light-grey);
+    font-size: 40px;
+    cursor: pointer;
+    right: 25px;
+    bottom: 25px;
     position: absolute;
-    bottom: 15px;
-    left: 0px;
   } 

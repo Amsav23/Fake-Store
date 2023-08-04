@@ -44,7 +44,7 @@ export default function FavoritesContextProvider(props){
 
     }
 
-    /*const removeProduct = (prodId) =>{
+    const removeProduct = (prodId) =>{
         console.log('remove', prodId)
         //use filter to KEEP all that are not prodId
         let newFavorites = favorites.filter(item => item.id != prodId)
@@ -52,10 +52,10 @@ export default function FavoritesContextProvider(props){
         //update state
         setFavorites(newFavorites)
 
-    }*/
+    }
 
     return(
-        <FavoritesContext.Provider value={{favorites, addProduct}}>
+        <FavoritesContext.Provider value={{favorites, addProduct, removeProduct}}>
             {props.children}
         </FavoritesContext.Provider>
     )

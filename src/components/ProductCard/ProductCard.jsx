@@ -1,17 +1,30 @@
 import React, {useContext} from 'react'
 import './ProductCard.css'
 import {Link} from 'react-router-dom'
-import {FaHeart, FaRegHeart} from 'react-icons/fa'
-import { FavoritesContext } from '../../contexts/FavoritesContext'
+import { IoHeartCircleOutline, IoHeartCircle } from "react-icons/io5";
+//import {FaHeart, FaRegHeart} from 'react-icons/fa'
+import { FavoritesContext } from '../../contexts/FavoritesContext';
 
 function ProductCard({product}) {
   //get the global state
   //NOTE {} NOT []
-  const {addProduct} = useContext(FavoritesContext)
+  const {addProduct, favorites, removeProduct} = useContext(FavoritesContext)
 
 
   //start with a variable to test UI
-  const isFavorite = false;
+  //const isFavorite = false;
+  //change to state in order to toggle it
+  const [isFavorite, setIsFavorite] = React.useState(false)
+
+  //how do we know if this particular product is in favorites?
+  React.useEffect(
+    ()=>{
+      //is product in favorites?
+      setIsFavorite(favorites?.find(item=>item.id===product.id))
+
+
+    }, [favorites] //run anytime favorites changes
+  )
 
 
   return (
@@ -22,9 +35,9 @@ function ProductCard({product}) {
         <p style={{fontWeight: "bold"}}>{product.price}€</p>
         {
           isFavorite?
-          <FaHeart className='heart-icon' />
+          <IoHeartCircleOutline onClick={()=>removeProduct(product.id)} className='heart-icon' />
           :
-          <FaRegHeart onClick={()=>addProduct(product)} className='heart-icon' />
+          <IoHeartCircle onClick={()=>addProduct(product)} className='heart-icon' />
         }
     </div>
   )
