@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './ProductCard.css'
 import {Link} from 'react-router-dom'
 import {FaHeart, FaRegHeart} from 'react-icons/fa'
@@ -7,7 +7,7 @@ import { FavoritesContext } from '../../contexts/FavoritesContext'
 function ProductCard({product}) {
   //get the global state
   //NOTE {} NOT []
-  //const {addProduct} = useContext(FavoritesContext)
+  const {addProduct} = useContext(FavoritesContext)
 
 
   //start with a variable to test UI
@@ -24,7 +24,7 @@ function ProductCard({product}) {
           isFavorite?
           <FaHeart className='heart-icon' />
           :
-          <FaRegHeart onClick={() => addProduct(product)} className='heart-icon' />
+          <FaRegHeart onClick={()=>addProduct(product)} className='heart-icon' />
         }
     </div>
   )
