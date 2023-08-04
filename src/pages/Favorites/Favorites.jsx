@@ -14,7 +14,10 @@ function Favorites() {
       <h1>My Favorite Products</h1>
       <div className="favorite-products">
         {
-          favorites.map(item => <ProductCard key={item.id} product={item}/>)
+          favorites?.length > 0 ?
+          favorites?.map(item => <ProductCard key={item.id} product={item}/>)
+          :
+          <p>No favorites selected yet</p>
         }
       </div>
     </div>

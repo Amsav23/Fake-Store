@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import './ProductCard.css'
 import {Link} from 'react-router-dom'
 import { IoHeartCircleOutline, IoHeartCircle } from "react-icons/io5";
-//import {FaHeart, FaRegHeart} from 'react-icons/fa'
 import { FavoritesContext } from '../../contexts/FavoritesContext';
 
 function ProductCard({product}) {

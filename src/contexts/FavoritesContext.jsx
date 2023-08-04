@@ -21,7 +21,7 @@ export default function FavoritesContextProvider(props){
     }, []
     )
     
-/*
+
     //this one is for saving to localStorage
     useEffect(
         ()=>{
@@ -30,7 +30,7 @@ export default function FavoritesContextProvider(props){
             localStorage.setItem('favoritesList', JSON.stringify(favorites))
 
         }, [favorites] //runs anytime darkMode changes
-    )*/
+    )
     
 
     //this function will add a product to the list
