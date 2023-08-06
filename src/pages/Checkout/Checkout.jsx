@@ -6,19 +6,17 @@ import { useNavigate } from 'react-router-dom'
 import Modal from "react-modal"
 
 
-
 const customStyles = {
     content: {
         top: '50%',
         left: '50%',
-        right: '50%',
-        bottom: '50%',
-        MarginRight: '50%',
-        transform: '50%',
-        marginBottom: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
     },
-    overlay: {
-        backgroundColor: "rgba(0,0,0,0,0.5)"
+    overlay:{
+        backgroundColor: "rgba(0,0,0,0.5",
     }
 }
 
@@ -40,7 +38,6 @@ function Checkout() {
 
     //create state to control my modal
     const [isOpen, setIsOpen] = React.useState(false)
-
 
 
     //get global state
@@ -76,38 +73,37 @@ function Checkout() {
     )
 
 
-
   return (
     <div className="checkout-container">
-        <p>Checkout</p>
         <div className="checkout-products">
             {
                 checkout?.length > 0 ?
                 checkout?.map(item => <CheckoutItem key={item.id} product={item}/>)
                 :
-                <p>No item in your cart</p>
+                <p>No items in your cart</p>
             }
 
-            <div className="totalCheckout">
-                <h2 className="total">Total {total}</h2>
+            <div className="total-checkout">
+                <h2>Total {total}€</h2>
                 <button className="checkout-btn" onClick={()=>setIsOpen(true)}>Checkout</button>
             </div>
 
             <Modal
                 isOpen={isOpen}
-                
+                onRequestClose={()=>setIsOpen(false)}
                 style={customStyles}
                 contentLabel="Checkout Modal"
             >
                 <div className='modal'>
                     <div className="modal-header">
-                        <h2>Your Order was successful</h2>
-                        <button className='modal-close-btn' onClick={()=>setIsOpen(false)}>Close</button>
+                        <h2>Your Order was successful!</h2>
                     </div>
+                        <button className='modal-close-btn' onClick={()=>setIsOpen(false)}>Close</button>
                     </div>    
 
-                    <div>
-                        <h3 className='modal-info'>Check your email...</h3>
+                    <div className='modal-footer'>
+                        <h3 className='modal-message'>Check your email for the order confirmation.
+                        Thank you for shopping at Amy's Fake Store!</h3>
                         <button className='return-btn' onClick={showHomepage}>Return to Main Page</button>
                     </div>
                     
@@ -118,33 +114,3 @@ function Checkout() {
 }
 
 export default Checkout
-
-
-/*
-import React, {useContext} from 'react'
-import './Favorites.css'
-import {CheckoutContext} from '../../contexts/CheckoutContext'
-import ProductCard from './../../components/ProductCard/ProductCard'
-
-function Favorites() {
-  //get the global state
-  //NOTE {} NOT []
-  const {favorites} = useContext(FavoritesContext)
-
-
-  return (
-    <div className="favorites-container">
-      <h1>My Favorite Products</h1>
-      <div className="favorite-products">
-        {
-          favorites?.length > 0 ?
-          favorites?.map(item => <ProductCard key={item.id} product={item}/>)
-          :
-          <p>No favorites selected yet</p>
-        }
-      </div>
-    </div>
-  )
-}
-
-export default Favorites*/

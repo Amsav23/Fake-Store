@@ -1,0 +1,93 @@
+/*Checkout Styling*/
+.checkout-container {
+    display: flex;
+}
+
+.checkout-products {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.checkout-products p {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.total-checkout {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 95%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.total-checkout h2 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.checkout-btn {
+    width: 150px;
+    height: 40px;
+    background-color: var(--yellow);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*Modal Styling*/
+.modal {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-btn {
+    background-color: var(--primary-bg);
+    color: var(--white);
+    border: none;
+    display: flex;
+    cursor: pointer;
+    padding: 8px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.modal-close-btn:hover{
+    background-color: red;
+}
+
+.modal-message {
+    height: 150px;
+    width: 500px;
+    margin: 50px;
+    text-align: center;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Return Button Styling*/
+.return-btn {
+    border: none;
+    background-color: var(--primary-bg);
+    color: var(--white);
+    padding: 10px;
+    margin: 0 200px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.return-btn:hover {
+    background-color: red;
+}

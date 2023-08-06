@@ -12,15 +12,13 @@ function CheckoutItem({product}) {
 
 
   return (
-    <div className="Checkout-products">
-        <div className="checkout-items">
+    <div className="checkout-item-products">
+        <div className="checkout-item">
             <img src={product.image} />
-            <p>{product.title}</p>
-            <p>{product.category}</p>
+            <p className='checkout-item-title'>{product.title}</p>
+            <p>{product.price}€</p>
+            <p>1</p>
 
-            <div className="price-elements">
-                <p>{product.price}</p>
-            </div>
             <BsTrash3 onClick={()=>removeProduct(product.id)} className="trash-can" />
         </div>
     </div>

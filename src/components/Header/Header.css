@@ -1,6 +1,6 @@
 .header-container {
     padding: 30px;
-    font-size: 25px;
+    font-size: 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,4 +10,12 @@
 
 .shoppingCartIcon {
     font-size: 2em;
+}
+
+.icon-container p {
+    position: absolute;
+    top: 37px;
+    right: 48px;
+    color: red;
+    font-size: 25px;
 }

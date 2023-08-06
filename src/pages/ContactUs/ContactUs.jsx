@@ -5,13 +5,12 @@ import "./ContactUs.css"
 function ContactUs() {
     return (
         <div className="contact-container">
-            <h2>ContactUs</h2>
+            <h3>Contact Us</h3>
             <form className="form-container">
                 <input type="text" placeholder="First Name" />
                 <input type="text" placeholder="Last Name" />
-                <input type="email" placeholder="email" />
-                <textarea placeholder="Write your message here" rows="4">Message</textarea>
-                <button className="submit-button">Submit</button>
+                <textarea placeholder="Message" rows="5">Write your message here</textarea>
+                <button className="submit-btn">Submit</button>
             </form>
         </div>
     )

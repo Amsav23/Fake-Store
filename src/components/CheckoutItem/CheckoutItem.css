@@ -1,0 +1,33 @@
+.checkout-item-products {
+    border: solid 1px var(--light-grey);
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    font-weight: bold;
+}
+
+.checkout-item img {
+    height: 180px;
+    padding: 15px;
+}
+
+.checkout-item p {
+    font-size: 20px;
+}
+
+.checkout-item-title {
+    display: flex;
+    text-align: center;
+    width: 200px;
+}
+
+.trash-can {
+    cursor: pointer;
+    font-size: 2em;
+}
