@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import './ProductDetails.css'
 import axios from 'axios'
+import { CheckoutContext } from '../../contexts/CheckoutContext'
 
 function ProductDetails() {
     //this page shows details about a specific product
@@ -13,7 +14,18 @@ function ProductDetails() {
     //https://fakestoreapi.com/products/1
 
     //create state for data for this product
-    const [product, setProduct] = React.useState([])
+    const {addProduct, checkout, removeProduct} = useContext(CheckoutContext)
+
+    const [inCheckout, setInCheckout] = useState(false)
+
+    useEffect(
+        ()=>{
+            setInCheckout(checkout?.find(item=>item.id==productId))
+        }, [checkout]
+    )
+
+    //create state for data for this character
+    const [product, setProduct] = useState('')
 
     useEffect(
         ()=>{
@@ -43,7 +55,13 @@ function ProductDetails() {
             <p>{product.price}€</p>
             <p>Description</p>
             <p>{product.description}</p>
-            <button>Add to Cart</button>
+
+            {
+                inCheckout?
+                <button className="remove-btn" onClick={()=>removeProduct(product.id)}>Remove from Cart</button>
+                :
+                <button className="add-btn" onClick={()=>addProduct(product)}>Add to Cart</button>
+            }
 
         </div>
     </div>

@@ -7,3 +7,7 @@
     color: var(--blue);
     font-weight: bold;
 }
+
+.shoppingCartIcon {
+    font-size: 2em;
+}

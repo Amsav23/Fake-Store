@@ -1,22 +1,22 @@
 import {useState, createContext, useEffect} from 'react'
 
 //create context
-export const FavoritesContext = createContext()
+export const CheckoutContext = createContext()
 
-export default function FavoritesContextProvider(props){
+export default function CheckoutContextProvider(props){
     //create the global state
-    const [favorites, setFavorites] = useState([])
+    const [checkout, setCheckout] = useState([])
 
     
     
     //this one is for retrieving from localStorage
     useEffect(()=>{
         //when page loads, check if there is value in localStorage
-        const storedFavorites = localStorage.getItem('favoritesList')
+        const storedCheckout = localStorage.getItem('checkoutList')
         //console.log(storedDarkMode)
         //if there was a value, use it
-        if (storedFavorites){
-            setFavorites(JSON.parse(storedFavorites))
+        if (storedCheckout){
+            setCheckout(JSON.parse(storedCheckout))
         }
     }, []
     )
@@ -27,9 +27,9 @@ export default function FavoritesContextProvider(props){
         ()=>{
             //console.log('darkmode now', darkMode)
             //save current state to localStorage
-            localStorage.setItem('favoritesList', JSON.stringify(favorites))
+            localStorage.setItem('checkoutItem', JSON.stringify(checkout))
 
-        }, [favorites] //runs anytime darkMode changes
+        }, [checkout] //runs anytime darkMode changes
     )
     
 
@@ -37,27 +37,27 @@ export default function FavoritesContextProvider(props){
     const addProduct = (prodToAdd) =>{
         console.log('adding', prodToAdd)
         //verify that I have the data of the product to add
-        let newFavorites = [...favorites, prodToAdd]
-        console.log(newFavorites)
+        let newCheckout = [...checkout, prodToAdd]
+        console.log(newCheckout)
         //update state
-        setFavorites(newFavorites)
+        setCheckout(newCheckout)
 
     }
 
     const removeProduct = (prodId) =>{
         console.log('remove', prodId)
         //use filter to KEEP all that are not prodId
-        let newFavorites = favorites.filter(item => item.id != prodId)
-        console.log(newFavorites)
+        let newCheckout = checkout.filter(item => item.id != prodId)
+        console.log(newCheckout)
         //update state
-        setFavorites(newFavorites)
+        setCheckout(newCheckout)
 
     }
 
     return(
-        <FavoritesContext.Provider value={{favorites, addProduct, removeProduct}}>
+        <CheckoutContext.Provider value={{checkout, addProduct, removeProduct, setCheckout}}>
             {props.children}
-        </FavoritesContext.Provider>
+        </CheckoutContext.Provider>
     )
 
 }
