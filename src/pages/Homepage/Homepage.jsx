@@ -3,24 +3,24 @@ import './Homepage.css'
 import axios from 'axios'
 import ProductCard from '../../components/ProductCard/ProductCard'
 
+
 function Homepage() {
-    //create state for the products
+    //create state for the PRODUCTS
     const [products, setProducts] = useState([])
 
-    //create state for the products
+    //create state for the CATEGORIES
     const [categories, setCategories] = useState([])
 
     //This page shows All products when it loads
     //https://fakestoreapi.com/products
 
-    //get categories and product when page loads
+    //get categories and products when page loads
     //https://fakestoreapi.com/categories
-    //https://fakestoreapi.com/jewelery
 
     useEffect(
         ()=>{
             console.log('homepage loaded')
-            //make api call to get product data
+            //make API call to get PRODUCT data
             axios.get('https://fakestoreapi.com/products')
             .then(res => {
                 console.log(res.data)
@@ -31,7 +31,7 @@ function Homepage() {
             .catch(err => console.log(err))
 
 
-            //make API call for categories
+            //make API call for CATEGORIES
             axios.get('https://fakestoreapi.com/products/categories')
             .then(res => {
                 console.log(res.data)
@@ -48,8 +48,9 @@ function Homepage() {
 const changeCategory = (category) => {
     //verify category in console
     console.log('category is', category)
+
     //now that I know category variable has what the user selected. What do I do next?
-    //make an API call to get data for this category
+    //make an API call to get DATA for this category
 
     axios.get(`https://fakestoreapi.com/products/category/${category}`)
         .then(res => {
@@ -63,7 +64,7 @@ const changeCategory = (category) => {
 
 const showAll = () => {
     console.log("show all products")
-    //make an API call to get all products
+    //make an API call to get ALL products
     axios.get(`https://fakestoreapi.com/products`)
         .then(res => {
             console.log(res.data)
@@ -74,7 +75,6 @@ const showAll = () => {
         .catch(err => console.log(err))
 }
 
-
   return (
     <div className="homepage-container">
         <div className="category-container">
@@ -84,12 +84,10 @@ const showAll = () => {
             }
         </div>
 
-
         <div className="products-container">
             {
                 products.map(item => <ProductCard 
                     key={item.id} product={item}/>)
-
                 //products.map(item => <p key={item.id}>{item.title}</p>)
             }
         </div>

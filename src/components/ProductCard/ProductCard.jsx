@@ -4,27 +4,25 @@ import {Link} from 'react-router-dom'
 import { IoHeartCircleOutline, IoHeartCircle } from "react-icons/io5";
 import { CheckoutContext } from '../../contexts/CheckoutContext';
 
+
 function ProductCard({product}) {
   //get the global state
   //NOTE {} NOT []
   const {addProduct, checkout, removeProduct} = useContext(CheckoutContext)
-
 
   //start with a variable to test UI
   //const isFavorite = false;
   //change to state in order to toggle it
   const [inCheckout, setInCheckout] = React.useState(false)
 
-  //how do we know if this particular product is in favorites?
+  //how do we know if this particular product is in checkout?
   React.useEffect(
     ()=>{
-      //is product in favorites?
+      //is product in checkout?
       setInCheckout(checkout?.find(item=>item.id===product.id))
 
-
-    }, [checkout] //run anytime favorites changes
+    }, [checkout] //run anytime checkout changes
   )
-
 
   return (
     <div className="product-card">
@@ -35,9 +33,9 @@ function ProductCard({product}) {
           <div className='checkout-card'>
           {
             inCheckout?
-           <IoHeartCircleOutline onClick={()=>removeProduct(product.id)} className='heart-icon' />
+           <IoHeartCircleOutline onClick={()=>removeProduct(product.id)} className='heart-icon-remove' />
            :
-           <IoHeartCircle onClick={()=>addProduct(product)} className='heart-icon' />
+           <IoHeartCircle onClick={()=>addProduct(product)} className='heart-icon-add' />
           }
         </div>
     </div>

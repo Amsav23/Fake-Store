@@ -4,8 +4,9 @@ import './ProductDetails.css'
 import axios from 'axios'
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 
+
 function ProductDetails() {
-    //this page shows details about a specific product
+    //this page shows DETAILS about a SPECIFIC product
     //the product id is in the url
 
     //extract productId from url
@@ -13,9 +14,8 @@ function ProductDetails() {
     //I need to get details for this product when the page loads
     //https://fakestoreapi.com/products/1
 
-    //create state for data for this product
+    //create state for data for checkout
     const {addProduct, checkout, removeProduct} = useContext(CheckoutContext)
-
     const [inCheckout, setInCheckout] = useState(false)
 
     useEffect(
@@ -24,7 +24,7 @@ function ProductDetails() {
         }, [checkout]
     )
 
-    //create state for data for this character
+    //create state for data for this product
     const [product, setProduct] = useState('')
 
     useEffect(
@@ -37,15 +37,11 @@ function ProductDetails() {
                 //I have the data, what do I do with it?
                 //store in state
                 setProduct(res.data)
-                
             })
-
             .catch(err=> console.log(err))
-
 
         }, [] //run once when page loads
     )
-
 
   return (
     <div className='details-container'>
@@ -55,14 +51,12 @@ function ProductDetails() {
             <p>{product.price}€</p>
             <p>Description</p>
             <p>{product.description}</p>
-
             {
                 inCheckout?
                 <button className="remove-btn" onClick={()=>removeProduct(product.id)}>Remove from Cart</button>
                 :
                 <button className="add-btn" onClick={()=>addProduct(product)}>Add to Cart</button>
             }
-
         </div>
     </div>
   )

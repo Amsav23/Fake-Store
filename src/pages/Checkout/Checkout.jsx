@@ -3,7 +3,7 @@ import './Checkout.css'
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem'
 import { useNavigate } from 'react-router-dom'
-import Modal from "react-modal"
+import Modal from 'react-modal'
 
 
 const customStyles = {
@@ -30,25 +30,21 @@ function Checkout() {
 
     const showHomepage = () => {
         //clear the cart
-        AiFillSafetyCertificate([])
+        setCheckout([])
 
         //go back to Homepage
         navigate('/')
     }
 
-    //create state to control my modal
+    //create state to Control my Modal
     const [isOpen, setIsOpen] = React.useState(false)
-
 
     //get global state
     //NOTE {} NOT []
-
-    const {checkout, setInCheckout} = useContext(CheckoutContext)
+    const {checkout, setCheckout} = useContext(CheckoutContext)
     const [total, setTotal] = React.useState(0)
 
-
     //when the checkout cart changes, I need to calculate the total
-
     //calculate the total
     //console.log the answer
     //create state
@@ -59,7 +55,7 @@ function Checkout() {
             let sum = 0
             for (let i = 0; i < checkout.length; i++) {
 
-                //can I print each price
+                //can I print each price?
                 //console.log(cart[i].price)
 
                 //add this price to the accumilator
@@ -71,7 +67,6 @@ function Checkout() {
             setTotal(sum)
         }, [checkout]
     )
-
 
   return (
     <div className="checkout-container">

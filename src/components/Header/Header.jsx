@@ -19,7 +19,6 @@ function Header() {
         <Link to='/checkout'><AiOutlineShoppingCart className="shoppingCartIcon"/></Link>
         <p>{checkout.length}</p>
       </div>
-
     </div>
   )
 }

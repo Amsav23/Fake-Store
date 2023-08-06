@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import Header from './components/Header/Header'
@@ -9,22 +8,22 @@ import Checkout from './pages/Checkout/Checkout'
 import CheckoutContextProvider from './contexts/CheckoutContext'
 import ContactUs from './pages/ContactUs/ContactUs'
 
-function App() {
 
+function App() {
 
   return (
     <BrowserRouter>
         <CheckoutContextProvider>
-        <Header />
+          <Header />
 
-        <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/details/:productId' element={<ProductDetails />} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/contactus' element={<ContactUs />} />
-        </Routes>
+            <Routes>
+              <Route path='/' element={<Homepage />} />
+              <Route path='/details/:productId' element={<ProductDetails />} />
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='/contactus' element={<ContactUs />} />
+            </Routes>
 
-        <Footer />
+          <Footer />
         </CheckoutContextProvider>
     </BrowserRouter>
   )

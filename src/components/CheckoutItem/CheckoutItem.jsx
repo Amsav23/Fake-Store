@@ -7,9 +7,7 @@ import { CheckoutContext } from '../../contexts/CheckoutContext'
 function CheckoutItem({product}) {
     //get global state
     //NOTE {} NOT []
-
     const {removeProduct} = useContext(CheckoutContext)
-
 
   return (
     <div className="checkout-item-products">
@@ -18,7 +16,6 @@ function CheckoutItem({product}) {
             <p className='checkout-item-title'>{product.title}</p>
             <p>{product.price}€</p>
             <p>1</p>
-
             <BsTrash3 onClick={()=>removeProduct(product.id)} className="trash-can" />
         </div>
     </div>

@@ -7,13 +7,11 @@ export default function CheckoutContextProvider(props){
     //create the global state
     const [checkout, setCheckout] = useState([])
 
-    
-    
-    //this one is for retrieving from localStorage
+    //this one is for RETRIEVING from localStorage
     useEffect(()=>{
         //when page loads, check if there is value in localStorage
-        const storedCheckout = localStorage.getItem('checkoutList')
-        //console.log(storedDarkMode)
+        const storedCheckout = localStorage.getItem('checkoutItem')
+        console.log(storedCheckout)
         //if there was a value, use it
         if (storedCheckout){
             setCheckout(JSON.parse(storedCheckout))
@@ -21,19 +19,16 @@ export default function CheckoutContextProvider(props){
     }, []
     )
     
-
-    //this one is for saving to localStorage
+    //this one is for SAVING to localStorage
     useEffect(
         ()=>{
-            //console.log('darkmode now', darkMode)
             //save current state to localStorage
             localStorage.setItem('checkoutItem', JSON.stringify(checkout))
 
-        }, [checkout] //runs anytime darkMode changes
+        }, [checkout] //runs anytime checkout changes
     )
     
-
-    //this function will add a product to the list
+    //this function will ADD a product to the list
     const addProduct = (prodToAdd) =>{
         console.log('adding', prodToAdd)
         //verify that I have the data of the product to add
@@ -41,9 +36,9 @@ export default function CheckoutContextProvider(props){
         console.log(newCheckout)
         //update state
         setCheckout(newCheckout)
-
     }
 
+    //this function will REMOVE a product from the list
     const removeProduct = (prodId) =>{
         console.log('remove', prodId)
         //use filter to KEEP all that are not prodId
@@ -51,7 +46,6 @@ export default function CheckoutContextProvider(props){
         console.log(newCheckout)
         //update state
         setCheckout(newCheckout)
-
     }
 
     return(
@@ -59,5 +53,4 @@ export default function CheckoutContextProvider(props){
             {props.children}
         </CheckoutContext.Provider>
     )
-
 }

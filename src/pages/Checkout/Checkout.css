@@ -1,6 +1,7 @@
-/*Checkout Styling*/
+/*Checkout Page Styling*/
 .checkout-container {
     display: flex;
+    min-height: 100vh;
 }
 
 .checkout-products {
@@ -37,7 +38,6 @@
     font-weight: bold;
     cursor: pointer;
 }
-
 
 /*Modal Styling*/
 .modal {
@@ -76,8 +76,7 @@
     flex-direction: column;
 }
 
-
-/*Return Button Styling*/
+/*Return to Main Page Button Styling*/
 .return-btn {
     border: none;
     background-color: var(--primary-bg);

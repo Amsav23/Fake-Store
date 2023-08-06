@@ -1,3 +1,4 @@
+/*Product Card Styling*/
 .product-card{
     padding: 20px;
     margin: 30px;
@@ -34,11 +35,21 @@
     margin: 5px;
 }
 
-.heart-icon{
-    color:var(--light-grey);
+/*Heart Icon Styling*/
+.heart-icon-add {
+    color: var(--light-grey);
     font-size: 40px;
     cursor: pointer;
     right: 25px;
     bottom: 25px;
     position: absolute;
-  } 
+}
+
+.heart-icon-remove {
+    color: var(--primary-bg);
+    font-size: 40px;
+    cursor: pointer;
+    right: 25px;
+    bottom: 25px;
+    position: absolute;
+} 
