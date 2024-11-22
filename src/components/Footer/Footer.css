@@ -19,3 +19,11 @@
     align-content: flex-end;
     font-size: 20px;
 }
+
+
+/* Media Queries */
+@Media (max-width: 425px) {
+    .footer-container p, .contact-btn {
+        font-size: 1rem;
+    }
+}

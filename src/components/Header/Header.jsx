@@ -12,7 +12,7 @@ function Header() {
   return (
     <div className="header-container">
       <div>
-        <Link to='/'>Fake Store</Link>
+        <Link to='/' className='fake-store-link'>Fake Store</Link>
       </div>
 
       <div className="icon-container">

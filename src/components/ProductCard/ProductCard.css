@@ -1,5 +1,5 @@
 /*Product Card Styling*/
-.product-card{
+.product-card {
     padding: 20px;
     margin: 30px;
     width: 250px;
@@ -8,28 +8,29 @@
     justify-content: space-evenly;
     border-radius: 12px;
 
-    box-shadow: 7px 8px 13px -4px grey;
     -webkit-box-shadow: 7px 8px 13px -4px grey;
     -moz-box-shadow: 7px 8px 13px -4px grey;
+    box-shadow: 7px 8px 13px -4px grey;
     background-color: white;
     border-color: grey;
     position: relative;
 }
 
-.product-card img{
+.product-card img {
     border: solid 1px var(--light-grey);
     width: 100%;
-    padding: 42px;
+    padding: 40px;
     border-radius: 12px;
 }
 
-.product-card a{
+.product-card a {
     display: flex;
     justify-self: baseline;
     margin: 5px;
+    width: 100%;
 }
 
-.product-card p{
+.product-card p {
     display: flex;
     justify-self: baseline;
     margin: 5px;
@@ -52,4 +53,11 @@
     right: 25px;
     bottom: 25px;
     position: absolute;
-} 
+}
+
+ /* Media Queries */
+ @Media (max-width: 425px) {
+    .product-card {
+        width: 75%;
+    }
+ }

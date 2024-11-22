@@ -3,32 +3,56 @@
     border: solid 1px var(--light-grey);
     display: flex;
     justify-content: center;
+    padding: 16px 30px;
 }
 
 .checkout-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     font-weight: bold;
 }
 
 .checkout-item img {
-    height: 180px;
-    padding: 15px;
+    width: 8rem;
 }
 
 .checkout-item p {
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 .checkout-item-title {
     display: flex;
     text-align: center;
-    width: 200px;
+    width: 13rem;
 }
 
 .trash-can {
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.6rem;
+}
+
+
+/* Media Queries */
+@Media (max-width: 425px) {
+    .checkout-item img {
+        width: 4rem;
+    }
+
+    .checkout-item {
+        gap: 20px;
+    }
+
+    .checkout-item p {
+        font-size: 0.6rem;
+    }
+
+    .trash-can {
+        font-size: 1rem;
+    }
+
+    .checkout-item-title {
+        width: 8rem;
+    }
 }

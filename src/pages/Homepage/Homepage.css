@@ -15,10 +15,28 @@
 .category-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .category-container p {
     font-size: 20px;
     cursor: pointer;
     color: var(--blue);
+}
+
+
+/* Media Queries */
+@Media (max-width: 425px) {
+    .homepage-container {
+        align-items: center;
+    }
+
+    .category-container {
+        width: 90%;
+    }
+
+    .category-container p {
+        font-size: 1rem;
+    }
+    
 }

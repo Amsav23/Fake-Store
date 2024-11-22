@@ -1,4 +1,4 @@
-/*Checkout Page Styling*/
+/* Checkout Page Styling */
 .checkout-container {
     display: flex;
     min-height: 100vh;
@@ -26,7 +26,7 @@
 }
 
 .total-checkout h2 {
-    font-size: 30px;
+    font-size: 1.8rem;
     font-weight: normal;
 }
 
@@ -38,8 +38,10 @@
     font-weight: bold;
     cursor: pointer;
 }
+/* End Checkout Page Styling */
 
-/*Modal Styling*/
+
+/* Modal Styling */
 .modal {
     height: 150px;
     display: flex;
@@ -57,7 +59,7 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 
 .modal-close-btn:hover{
@@ -75,8 +77,10 @@
     display: flex;
     flex-direction: column;
 }
+/* End Modal Styling */
 
-/*Return to Main Page Button Styling*/
+
+/* Return to Main Page Button Styling */
 .return-btn {
     border: none;
     background-color: var(--primary-bg);
@@ -84,9 +88,24 @@
     padding: 10px;
     margin: 0 200px;
     cursor: pointer;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 
 .return-btn:hover {
     background-color: red;
+}
+/* End Return to Main Page Button Styling */
+
+
+/* Media Queries */
+@Media (max-width: 425px) {
+    .total-checkout h2 {
+        font-size: 1rem;
+    }
+
+    .checkout-btn {
+        width: 6rem;
+        font-size: 0.6rem;
+        height: 30px;
+    }
 }

@@ -15,8 +15,21 @@
 
 .icon-container p {
     position: absolute;
-    top: 37px;
-    right: 48px;
+    top: 35px;
+    right: 45px;
     color: red;
-    font-size: 25px;
+    font-size: 22px;
+}
+
+
+/* Media Queries */
+@Media (max-width: 425px) {
+    .fake-store-link, .header-container, .icon-container p {
+        font-size: 1.2rem;
+    }
+
+    .icon-container p {
+        top: 32px;
+        right: 40px;
+    }
 }
