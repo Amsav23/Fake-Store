@@ -20,7 +20,7 @@ function App() {
               <Route path='/' element={<Homepage />} />
               <Route path='/details/:productId' element={<ProductDetails />} />
               <Route path='/checkout' element={<Checkout />} />
-              <Route path='/contactus' element={<ContactUs />} />
+              <Route path='/contactUs' element={<ContactUs />} />
             </Routes>
 
           <Footer />

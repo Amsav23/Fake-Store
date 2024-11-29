@@ -43,58 +43,38 @@
 
 /* Modal Styling */
 .modal {
-    height: 150px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 75px 0;
+    gap: 40px;
 }
 
-.modal-close-btn {
-    background-color: var(--primary-bg);
-    color: var(--white);
-    border: none;
-    display: flex;
-    cursor: pointer;
-    padding: 8px;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    transition: background-color 0.1s ease-in-out;
-}
-
-.modal-close-btn:hover{
-    background-color: red;
-}
-
-.modal-message {
-    height: 150px;
-    width: 500px;
-    margin: 50px;
+h3 {
+    width: 75%;
     text-align: center;
 }
 
-.modal-footer {
+.close-btn {
     display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
-/* End Modal Styling */
 
-
-/* Return to Main Page Button Styling */
-.return-btn {
-    border: none;
+.close-btn, .return-btn {
     background-color: var(--primary-bg);
     color: var(--white);
+    border: none;
     padding: 10px;
-    margin: 0 200px;
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
 }
 
-.return-btn:hover {
+.close-btn:hover, .return-btn:hover {
     background-color: red;
 }
-/* End Return to Main Page Button Styling */
+/* End Modal Styling */
 
 
 /* Media Queries */
@@ -107,5 +87,18 @@
         width: 6rem;
         font-size: 0.6rem;
         height: 30px;
+    }
+
+    .checkout-products p {
+        font-size: 20px;
+    }
+
+    h3 {
+        width: 90%;
+    }
+
+    .close-btn {
+        top: 14px;
+        right: 14px;
     }
 }

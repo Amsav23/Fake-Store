@@ -11,9 +11,7 @@ function Header() {
 
   return (
     <div className="header-container">
-      <div>
-        <Link to='/' className='fake-store-link'>Fake Store</Link>
-      </div>
+      <Link to='/' className='fake-store-link'>Fake Store</Link>
 
       <div className="icon-container">
         <Link to='/checkout'><AiOutlineShoppingCart className="shoppingCartIcon"/></Link>

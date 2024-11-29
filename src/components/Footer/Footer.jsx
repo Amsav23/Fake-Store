@@ -10,9 +10,7 @@ function Footer() {
   return (
     <div className="footer-container">
       <p>Made with love by mimo</p>
-        <Link to="/contactus">
-          <button className="contact-btn" onClick={()=>setIsOpen(true)}>Contact Us</button>
-        </Link>
+      <Link to="/contactUs" onClick={()=>setIsOpen(true)}>Contact Us</Link>
     </div>
   )
 }

@@ -1,29 +1,24 @@
 /*Footer Styling*/
 .footer-container {
     background-color: var(--primary-bg);
-    padding: 30px;
+    padding: 40px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--white);
-    font-size: 20px;
-}
-
-.contact-btn {
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    color: var(--white);
-    display: flex;
-    align-content: flex-end;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 
 /* Media Queries */
 @Media (max-width: 425px) {
-    .footer-container p, .contact-btn {
-        font-size: 1rem;
+    .footer-container {
+        font-size: 0.8rem;
+    }
+}
+
+@Media (max-width: 768px) {
+    .footer-container {
+        font-size: 1rem
     }
 }

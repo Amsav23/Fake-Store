@@ -88,20 +88,13 @@ function Checkout() {
                 onRequestClose={()=>setIsOpen(false)}
                 style={customStyles}
                 contentLabel="Checkout Modal"
-            >
-                <div className='modal'>
-                    <div className="modal-header">
-                        <h2>Your Order was successful!</h2>
-                    </div>
-                        <button className='modal-close-btn' onClick={()=>setIsOpen(false)}>Close</button>
-                    </div>    
-
-                    <div className='modal-footer'>
-                        <h3 className='modal-message'>Check your email for the order confirmation.
-                        Thank you for shopping at Amy's Fake Store!</h3>
-                        <button className='return-btn' onClick={showHomepage}>Return to Main Page</button>
-                    </div>
-                    
+            >  
+                <div className="modal">
+                    <h2>Your Order was successful!</h2>
+                    <button className='close-btn' onClick={()=>setIsOpen(false)}>Close</button>
+                    <h3>Check your email for the order confirmation. Thank you for shopping at Amy's Fake Store!</h3>
+                    <button className='return-btn' onClick={showHomepage}>Return to Main Page</button>
+                </div>
             </Modal>
         </div>
     </div>
