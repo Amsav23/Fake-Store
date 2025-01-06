@@ -2,17 +2,15 @@
 .details-container {
     background-color: var(--white);
     min-height: 100vh;
-    margin: 50px;
-    padding: 100px;
+    margin: 2rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .details-container img {
     display: flex;
     align-self: center;
-    height: 260px;
-    margin: 0 120px;
+    width: 12rem;
 }
 
 .container-info {
@@ -21,6 +19,8 @@
     justify-content: space-evenly;
     background-color: var(--white);
     font-weight: 500;
+    width: 50%;
+    margin: 100px 0;
 }
 
 .container-info button {
@@ -30,4 +30,24 @@
     width: 180px;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+/* Media Queries */
+@media (max-width: 425px) {
+    .details-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-container img {
+        width: 10rem;
+    }
+
+    .container-info {
+        width: 100%;
+        margin: 0;
+        height: 25rem;
+        padding: 0 1rem;
+    }
 }
